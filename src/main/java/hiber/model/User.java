@@ -31,22 +31,13 @@ public class User {
     public User() {
     }
 
-    @Autowired
-    public User(String firstName, String lastName, String email, Car userCar) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    public User(Car userCar) {
         this.userCar = userCar;
     }
 
     public Car getUserCar() {
         return userCar;
     }
-
-    public void setUserCar(Car userCar) {
-        this.userCar = userCar;
-    }
-
 
     public Long getId() {
         return id;
