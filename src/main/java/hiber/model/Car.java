@@ -1,7 +1,5 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,11 +8,9 @@ import java.util.Objects;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private int id;
     @Column(name = "model")
     private String model;
-
     @Column(name = "series")
     private int series;
 
@@ -43,11 +39,6 @@ public class Car {
     }
 
     @Override
-    public String toString() {
-        return "User's car is " + model + ", series " + series + ".";
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -58,5 +49,14 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(model, series);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+                '}';
     }
 }

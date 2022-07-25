@@ -1,13 +1,12 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "users")
+
 public class User {
 
     @Id
@@ -24,15 +23,19 @@ public class User {
 
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "car_id")
     private Car userCar;
 
     public User() {
     }
 
-    public User(Car userCar) {
+    public User(String firstName, String lastName, String email, Car userCar) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
         this.userCar = userCar;
+
     }
 
     public Car getUserCar() {
