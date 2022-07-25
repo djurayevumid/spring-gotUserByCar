@@ -19,10 +19,10 @@ public class MainApp {
         Car car3 = new Car("Mercedes Benz", 9);
         Car car4 = new Car("Mercedes Benz", 7);
 
-        User user1 = new User("Tim", "Burton", "user1@mail.ru");
-        User user2 = new User("Adam", "Sandler", "user2@mail.ru");
-        User user3 = new User("Nate", "Higger", "user3@mail.ru");
-        User user4 = new User("Nill", "Kigger", "user4@mail.ru");
+        User user1 = new User("Tim", "Burton", "user1@mail.ru", car1);
+        User user2 = new User("Adam", "Sandler", "user2@mail.ru", car2);
+        User user3 = new User("Nate", "Higger", "user3@mail.ru", car3);
+        User user4 = new User("Nill", "Kigger", "user4@mail.ru", car4);
         user1.setUserCar(car1);
         user2.setUserCar(car2);
         user3.setUserCar(car3);
