@@ -8,7 +8,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-@Component
 public class User {
 
     @Id
@@ -22,6 +21,7 @@ public class User {
     private String lastName;
 
     @Column(name = "email")
+
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -31,6 +31,7 @@ public class User {
     public User() {
     }
 
+    @Autowired
     public User(String firstName, String lastName, String email, Car userCar) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,7 +43,6 @@ public class User {
         return userCar;
     }
 
-    @Autowired
     public void setUserCar(Car userCar) {
         this.userCar = userCar;
     }

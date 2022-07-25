@@ -5,6 +5,7 @@ import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -28,18 +29,14 @@ public class MainApp {
         user3.setUserCar(car3);
         user4.setUserCar(car4);
 
-        car1.setUser(user1);
-        car2.setUser(user2);
-        car3.setUser(user3);
-        car4.setUser(user4);
 
-        userService.add(user1);
-        userService.add(user2);
-        userService.add(user3);
-        userService.add(user4);
+        userService.addUser(user1);
+        userService.addUser(user2);
+        userService.addUser(user3);
+        userService.addUser(user4);
 
 
-        List<User> users = userService.listUsers();
+        List<User> users = userService.getUsersList();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
             System.out.println("First Name = " + user.getFirstName());
