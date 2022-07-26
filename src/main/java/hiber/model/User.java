@@ -31,15 +31,18 @@ public class User {
     }
 
     public User(String firstName, String lastName, String email, Car userCar) {
-        this.lastName = lastName;
         this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.userCar = userCar;
-
     }
 
     public Car getUserCar() {
         return userCar;
+    }
+
+    public void setUserCar(Car userCar) {
+        this.userCar = userCar;
     }
 
     public Long getId() {
@@ -76,7 +79,13 @@ public class User {
 
     @Override
     public String toString() {
-        return firstName + " " + lastName;
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", userCar=" + userCar +
+                '}';
     }
 
     @Override

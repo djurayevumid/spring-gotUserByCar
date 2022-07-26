@@ -5,6 +5,7 @@ import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.Environment;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,13 +15,19 @@ public class MainApp {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
-        UserService userService = context.getBean(UserService.class);
 
+        UserService userService = context.getBean(UserService.class);
+//        User user = context.getBean("userBean", User.class);
+
+//        user.setUserCar().;
+//
         userService.addUser(new User("Mike", "Chukcha", "mike@mail.ru", new Car("BMW", 7)));
         userService.addUser(new User("Jane", "Jonnah", "jane@mail.ru", new Car("Mini cooper", 8)));
         userService.addUser(new User("Nick", "Flames", "nick@mail.ru", new Car("Volvo", 10)));
         userService.addUser(new User("Nick", "Nickolson", "nickolson@mail.ru", new Car("Hunday", 5)));
         userService.addUser(new User("Harold", "Dickerson", "har@mail.ru", new Car("Volvo", 4)));
+//
+
 
 
         List<User> users = userService.getUsersList();
